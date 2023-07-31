@@ -25,3 +25,14 @@
 #container a {
   text-decoration: none;
 }
+.center-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* This ensures the container takes up the full height of the ion-card */
+}
+
+.center-button-container ion-button {
+  /* You can add additional styles to the button if needed */
+}
+
