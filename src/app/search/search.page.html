@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Movie search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionChange)="onSearch()" [(ngModel)]="searchQuery"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let movie of filteredMovies">
+      <ion-thumbnail slot="end">
+        <img [src]="" alt="Movie Poster">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ movie.title }}</h2>
+        <p>{{ movie.overview }}</p>
+        <p>Release Date: {{ movie.release_date }}</p>
+        <p>Popularity: {{ movie.popularity }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
