@@ -9,7 +9,7 @@
   <ion-list>
     <ion-item *ngFor="let movie of filteredMovies" (click)="viewMovieDetails(movie)">
       <ion-thumbnail slot="end">
-        <img [src]="" alt="Movie Poster">
+        <img [src]="'https://image.tmdb.org/t/p/w500' + movie?.poster_path" alt="Movie Poster">
       </ion-thumbnail>
       <ion-label>
         <h2>{{ movie.title }}</h2>
