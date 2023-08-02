@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchMoviesService } from '../services/fetch-movies.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -11,7 +12,10 @@ export class SearchPage implements OnInit {
   public filteredMovies: any[] = []; // An array to store filtered movies data
   public searchQuery: string = ''; // The search query entered by the user
 
-  constructor(private fetchMovies: FetchMoviesService) { }
+  constructor(
+    private fetchMovies: FetchMoviesService,
+    private router:Router
+    ) { }
 
   async ngOnInit() {
     try {
@@ -32,5 +36,8 @@ export class SearchPage implements OnInit {
     this.filteredMovies = this.moviesData.filter(movie =>
       movie.title.toLowerCase().includes(searchQueryLower)
     );
+  }
+  viewMovieDetails(movie: any) {
+    this.router.navigate(['/movie-details', movie.id]);
   }
 }

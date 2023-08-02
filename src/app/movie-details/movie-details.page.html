@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ movie?.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-img [src]="movie?.poster_path" alt="Movie Poster"></ion-img>
+      <p>{{ movie?.overview }}</p>
+    </ion-card-content>
+    </ion-card>
+</ion-content>
